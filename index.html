@@ -116,15 +116,9 @@
 				var jumpModel = jumpDict[getpara]
 				console.log('参数名字',getpara,jumpModel)
 				document.title = jumpModel['viewName'];
-				// if (parseInt(getpara) == 0){
-				// 	document.getElementById("neirongliebiaotupian0").style.display="";//显示
-				// 	$("#neirongliebiaotupian0").attr("src",jumpModel['imgSrc0']);	
-				// }else{
-				// 	document.getElementById("neirongliebiaotupian0").style.display="none";//隐藏
-				// }
-				$("#neirongliebiaotupian").attr("src",jumpModel['imgSrc']);
-				$('#chaolianjie').attr('href',jumpModel['imgHref']); 
-				$('#gequneirong').attr('src',jumpModel['audioSrc']); 
+				document.getElementById('neirongliebiaotupian').src= jumpModel['imgSrc'];
+				document.getElementById('chaolianjie').href = jumpModel['imgHref'];
+				document.getElementById('gequneirong').src = jumpModel['audioSrc'];
 				document.getElementById('gequneirong').play();
 				var newViewNum = parseInt(getpara) + 1
 				if (newViewNum == dictLength){
@@ -137,7 +131,7 @@
 
 			function machineStyle() {
                 
-                loadNewView()
+                	loadNewView()
     			var u = navigator.userAgent, app = navigator.appVersion;
     			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
     			var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
