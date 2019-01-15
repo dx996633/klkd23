@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="apple-touch-fullscreen" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>加载中...</title>
+	</head>
+	<body style="margin:0px auto;width:100%;max-width:100vw; " onload = "machineStyle()">
+		<style>
+			.body{width:100%;height:100%;position:relative;padding:0 10px;font-size: 100px;}
+			.fanhuitubiao{width:100px;height:100px;top:40px; left: 40px;position: fixed;background-color:#fff;border-radius:50px;}
+			.neirongliebiaotupiandingbu{width:100vw;padding: 0 10px;box-sizing: border-box; }
+			.neirongliebiaotupian{width:100vw;padding: 0 10px;box-sizing: border-box; }
+			.neirongliebiaotupian0{width:100vw;padding: 0 10px;box-sizing: border-box; }
+		</style>	
+
+
+		<div class="item_wrap rel" style="padding-bottom: 35px;">
+			<audio id="gequneirong" loop="loop" preload="auto" >		 
+				<source src="" type="audio/mp3" />
+			</audio>
+			<img id="fanhuitubiao" class="fanhuitubiao" style="" onclick="fanhuitiaozhuan()" src="https://p.qpic.cn/pic_wework/2137727385/181eea144321e42beaa926cc113a6680ce342129fb327c5f/0"/>	
+			<img id="neirongliebiaotupian0" style="display:none" class="neirongliebiaotupian0"  src="" data-fmt="jpg"/>
+			<a id="chaolianjie" href=""> <img id="neirongliebiaotupian" class="neirongliebiaotupian"  src="" data-fmt="jpg"/> </a>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+		    var hrefB = ""
+            function getParam(paramName) { 
+                paramValue = "", isFound = !1; 
+                 if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) { 
+                         arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0; 
+                         while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ 
+                } 
+             return paramValue == "" && (paramValue = null), paramValue 
+            } 
+			var jumpDict = [
+                {
+					viewName:'恭喜你中奖了',
+					audioSrc:'http://img.imgqq.cn/Uploads/mp3/201812/26/1812_5c2382682c2ae.mp3',
+					imgHref:'http://dsfsdio123.gitee.io/newpro586?v=1',
+                    imgSrc:'https://p.qpic.cn/pic_wework/2742915127/c8ce63c793f754b33d42296bd4fc34d349c773440bf050a1/0',
+				},
+				{
+					viewName:'大_贪_倌玩_弄下_属视_频暴_*光，14亿国..人惊_呆了',
+					audioSrc:'http://img.wandalvyoucheng.com/qn201812221821229794.mp3',
+					imgHref:'http://mp.weixin.qq.com/s?__biz=MzU3NDc3NzM5OQ==&mid=100000017&idx=1&sn=767603d9e8e5b777720548ef5898134c&chksm=7d2c70494a5bf95fb670382c1b8c045d6d9364332c968ab96db7a3cd476df994410b1c1dd0a6#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/babc13b565992f3257f4c03cba7307ca4b9435a02d152a21/0',
+				},
+				{
+					viewName:'为何贪_倌喜_欢买私人飞_机，空_姐的专属服_务！',
+					audioSrc:'http://img.pna18.top/qn201812251518147157.mp3',
+					imgHref:'http://mp.weixin.qq.com/s?__biz=MzU2Mjc3Njg4NA==&mid=100000016&idx=1&sn=af89d71a792d78034949abb9083b864d&chksm=7c651f4b4b12965d41f672b17daec01b311563f2be87c35d008ffefa63478e50114d0e0f3e08#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/7f79d670e7fd46e8a27fd1c1bbf6213621666b57ed5fb3ea/0',
+				},
+			
+				{
+					viewName:'老_公长期出_差，寂_寞_难_耐，竟和小_犬干这种_事！',
+					audioSrc:'http://img8.xikuu.com/qn201812152041071899.mp3',
+					imgHref:'http://mp.weixin.qq.com/s?__biz=MzU4MTc1NzMzOQ==&mid=100000095&idx=1&sn=6fb373ee519b5b10f8a06f2c72f79759&chksm=7d43f1ab4a3478bde124147c008878fec770f083866ff29897812e188ebc5473d05240e81dad#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/e4e24debf032309e7311d0a4e5fb1f0efe3ddc508c6cf598/0',
+				},
+				{
+					viewName:'高_倌所住的特殊病_房竟然还配备特_殊的护_士！',
+					audioSrc:'http://img8.xikuu.com/qn201812191654328764.mp3',
+					imgHref:'http://mp.weixin.qq.com/s?__biz=MzU0Njk1NjUxNA==&mid=100000125&idx=1&sn=7e5fef26c3126fbcd9bfb9ce4f3f5354&chksm=7b54f4f04c237de6dfa79e1b6a1928a3a4f8cd421be98c9ed377156632f894083ce6d0542c91#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/6b6dc264b2f18a2685512908daa68cfd99291a1cd06781ec/0',
+				},
+				{
+					viewName:'女_贪_倌_玩_弄_男_下_属_视_频_暴_光！',
+					audioSrc:'http://img8.xikuu.com/qn201812191837262096.mp3',
+					imgHref:'https://mp.weixin.qq.com/s?__biz=Mzg2ODA0OTA2Mw==&mid=100000031&idx=1&sn=84f21b248208a72dcb0343e015a75126&chksm=4eb308d779c481c116f477a58d8fb9ecfe5cd2a8b6be295efb17bb2fe60045c4afe66d1df799#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/4f49e64082af9aedcfe5b4f3de8aa44f7f7fc175e18dad6b/0',
+				},
+				{
+					viewName:'捐_精_流_程_暴_光，不_为_人_知的秘_密！',
+					audioSrc:'http://img8.xikuu.com/qn201812142004058487.mp3',
+					imgHref:'http://mp.weixin.qq.com/s?__biz=MzUxNDk4NDI1Nw==&mid=100000038&idx=1&sn=51e6632e5af8b7e5458d48e5e50fd500&chksm=79bcd1084ecb581efaa461701b696406acb829af5017dedac9f3e49c4a1c616457c43d98cb5e#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/22248b2de6f2cbbd080f47aea5d27f8c2430b2bf4bf11d41/0',
+				},
+				{
+					viewName:'某贪_倌_落_马时还在于某_明_星淫乱_视_频已更新',
+					audioSrc:'http://img8.xikuu.com/qn201812191837262096.mp3',
+					imgHref:'http://mp.weixin.qq.com/s?__biz=MzU2MTc1NzM4Ng==&mid=100000122&idx=1&sn=586492af1614c613a44ae86ed8df16a7&chksm=7c72acdf4b0525c97597feec938839348631b95c4e1bd956695aab714555f7e78efea6da91d7#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/1412bd1b38fa8ef8e0fdf6d754deec05030396b4a8758100/0',
+				},
+				{
+					viewName:'司_机_强_暴_女_大_学_生_视_频_呈_现！',
+					audioSrc:'http://img8.xikuu.com/qn201812201704245710.mp3',
+					imgHref:'http://mp.weixin.qq.com/s?__biz=MzU3MTc3MjM0NQ==&mid=100000039&idx=1&sn=58b932a5f26838d9674f8e4e33b5f28a&chksm=7cda5df14badd4e7fe4f6cf6bf76b505e3dcff087d49b7ccda0f64909eb07f346a7132575200#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/898f2086391145bbdea908d5fb803d4b611c5dfefa10890e/0',
+				},
+				{
+					viewName:'75岁老_爷_子娷_了20岁女_子同_方_后，所有人都惊_呆了',
+					audioSrc:'http://img8.xikuu.com/qn201812151824411031.mp3',
+					imgHref:'http://mp.weixin.qq.com/s?__biz=MzU4NTc3NDQ0NA==&mid=100000031&idx=1&sn=7358b76c827eea3b5da4e9d72a06f386&chksm=7d84251c4af3ac0a104e6476a70ce0046825ddda7077037f67a6ba8d10bee6c4ebe77c441208#rd',
+					imgSrc:'https://p.qpic.cn/pic_wework/2742915127/d8de71d75f235f33fa2d677f8478261f4e113d93e5f74e69/0',
+				}
+			]
+
+			function GetUrlRelativePath(){
+　　　　		var url = document.location.toString();
+　　　			 var arrUrl = url.split("//");
+　　　　		var start = arrUrl[1].indexOf("/");
+　　　　		var relUrl = arrUrl[1].substring(start);//stop省略，截取从start开始到结尾的所有字符
+　　　　		if(relUrl.indexOf("?") != -1){
+　　　　　		　relUrl = relUrl.split("?")[0];
+　　　　		}
+　　			　return relUrl;
+		  　}
+            var dictLength = jumpDict.length
+			function loadNewView(){
+				var getpara = getParam("viewNum")
+				var jumpModel = jumpDict[getpara]
+				console.log('参数名字',getpara,jumpModel)
+				document.title = jumpModel['viewName'];
+				// if (parseInt(getpara) == 0){
+				// 	document.getElementById("neirongliebiaotupian0").style.display="";//显示
+				// 	$("#neirongliebiaotupian0").attr("src",jumpModel['imgSrc0']);	
+				// }else{
+				// 	document.getElementById("neirongliebiaotupian0").style.display="none";//隐藏
+				// }
+				$("#neirongliebiaotupian").attr("src",jumpModel['imgSrc']);
+				$('#chaolianjie').attr('href',jumpModel['imgHref']); 
+				$('#gequneirong').attr('src',jumpModel['audioSrc']); 
+				document.getElementById('gequneirong').play();
+				var newViewNum = parseInt(getpara) + 1
+				if (newViewNum == dictLength){
+					newViewNum = 0
+				}
+				var dateStr = new Date().getTime()
+				hrefB = GetUrlRelativePath() + '?viewNum=' + newViewNum + "#oor"+ dateStr
+				console.log('tiaozhuan',hrefB)
+			}
+
+			function machineStyle() {
+                
+                loadNewView()
+    			var u = navigator.userAgent, app = navigator.appVersion;
+    			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+    			var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    			if (isIOS) {
+						bb()
+					}else{
+						history.pushState(null, null, location.href);
+						window.addEventListener('popstate', function(event) {
+    						history.pushState(null, null, location.href );
+   							 //此处加入回退时你要执行的代码
+							fanhuitiaozhuan()
+						});
+						aa()
+					}
+				}
+
+			function IsPC() {
+				var userAgentInfo = navigator.userAgent;
+				var Agents = ["Android", "iPhone",
+						"SymbianOS", "Windows Phone",
+						"iPad", "iPod"];
+				var flag = true;
+				if (userAgentInfo.indexOf('wechatdevtools') > 0) {
+					return flag;
+				}
+				for (var v = 0; v < Agents.length; v++) {
+					if (userAgentInfo.indexOf(Agents[v]) > 0) {
+					flag = false;
+					break;
+					}
+				}
+				return flag;
+			}
+			var useragent = navigator.userAgent;
+			if (useragent.match(/MicroMessenger/i) != 'MicroMessenger' || IsPC() ) {
+					var opened = window.open('http://www.baidu.com', '_self');
+					opened.opener = null;
+					opened.close();
+			}
+    		function bb(){
+				if (window.history && window.history.pushState) {
+							$(window).on('popstate', function () {
+								window.history.pushState('forward', null, '#');
+								window.history.forward(1);
+								window.location.href= hrefB;
+							});
+						}
+						window.history.pushState('forward', null, '#');
+						window.history.forward(1);
+				}
+			function aa(){
+				if(window.name=="new"){
+					setTimeout('fanhuitiaozhuan()',500)
+				}else{
+					window.name="new"; 
+					}
+				}
+			function fanhuitiaozhuan() {
+					window.name="";
+					location.href= hrefB;
+				}
+			document.addEventListener("WeixinJSBridgeReady",function(){document.getElementById('gequneirong').play();},false);
+		</script>
+		<div style="display:none">
+<script type="text/javascript" src="https://s96.cnzz.com/z_stat.php?id=1275910212&web_id=1275910212"></script>
+			</div>
+
+	</body>
+</html>
+	
